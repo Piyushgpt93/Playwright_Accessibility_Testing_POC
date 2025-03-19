@@ -25,6 +25,5 @@ test.describe('Accessibility testing', () => {
 
     await page.close();
     await browser.close();
-
   });
 });

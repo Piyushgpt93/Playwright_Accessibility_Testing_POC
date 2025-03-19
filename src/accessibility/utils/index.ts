@@ -1,1 +1,1 @@
-export {expect,test} from "./accessibilityrule"
+export { expect, test } from './accessibilityrule';

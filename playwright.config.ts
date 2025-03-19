@@ -1,5 +1,19 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
 
+switch (process.env.NODE_ENV) {
+  case 'local':
+    dotenv.config({ path: './environments/local.env' });
+    break;
+  case 'dev':
+    dotenv.config({ path: './environments/dev.env' });
+    break;
+  case 'qa':
+    dotenv.config({ path: './environments/qa.env' });
+    break;
+  default:
+    dotenv.config({ path: './environments/qa.env' });
+}
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -12,7 +26,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: './src',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -22,7 +36,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [['html'], ['line'], ['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */

@@ -9,7 +9,7 @@ test.describe('Accessibility testing', () => {
     accessibilityBuilder,
     browser,
   }) => {
-    await page.goto('https://www.engineersmind.com/');
+    await page.goto('https://www.saucedemo.com/');
     await page.waitForLoadState('networkidle');
     const accessibilityScanResults = await accessibilityBuilder.analyze();
 
@@ -24,6 +24,6 @@ test.describe('Accessibility testing', () => {
     await expect.soft(accessibilityScanResults.violations).toEqual([]);
 
     await page.close();
-    await browser.close();
+    //await browser.close();
   });
 });

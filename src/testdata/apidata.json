@@ -1,0 +1,25 @@
+{
+  "postcalldata": {
+    "firstname": "sammy",
+    "lastname": "Murrthy",
+    "totalprice": 7869,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2028-01-01",
+      "checkout": "2018-01-01"
+    },
+    "additionalneeds": "Dinner"
+  },
+
+  "putcalldata": {
+    "firstname": "Sumit",
+    "lastname": "Sharma",
+    "totalprice": 3000,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2018-01-01",
+      "checkout": "2019-01-01"
+    },
+    "additionalneeds": "Dinner"
+  }
+}

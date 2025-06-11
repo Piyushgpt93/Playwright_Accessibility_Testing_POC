@@ -23,7 +23,7 @@ dataArray.forEach((data) => {
             'test-results',
             `${data.TestURL.replace(/[^a-zA-z0-9]/g, '_')}`
           ),
-          reportFileName: `${data.TestURL.replace(/[^a-zA-z0-9]/g, '_').}.html`,
+          reportFileName: `${data.TestURL.replace(/[^a-zA-z0-9]/g, '_')}.html`,
         },
       });
 

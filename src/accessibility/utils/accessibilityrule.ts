@@ -8,8 +8,10 @@ export const test = base.extend<{
     const accessibilityBuilder = await new AxeBuilder({ page }).withTags([
       'wcag2a',
       'wcag2aa',
+      'wcag2aaa',
       'wcag21a',
       'wcag21aa',
+      'wcag22aa',
     ]);
 
     await use(accessibilityBuilder);
